@@ -16,3 +16,15 @@
 /*@import "https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
 */
 @import "bulma/bulma.css"
+
+/*.my-own-bg {
+	background: url(/assets/my_pattern.png);
+};
+*/
+/*.my_own_opacity {
+	opacity: 0.5;
+};*/
+
+/*.adj-to-children {
+	display:inline-block;
+}*/

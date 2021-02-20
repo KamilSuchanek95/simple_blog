@@ -1,16 +1,21 @@
-<hr>
-<hr>
-<h2>Comments</h2>
-<% @article.comments.each do |comment| %>
-	<p>
-		<strong>Comenter:</strong>
-		<%= comment.commenter %>
-	</p>
-	<p>
-		<strong>Comment:</strong>
-		<%= comment.body %>
-	</p>
-	<p>
-		<%= link_to 'Remove Comment', [comment.article, comment], method: :delete, data: { confirm: 'Are You sure?'} %>
-	</p>
-<% end %>
+<div class="container">
+  <div class="content is-medium is-narrow">
+    <div style="display:inline-block">
+      <div><p> </p></div>
+			<% @article.comments.each do |comment| %>
+		    <article class="media has-text-white">
+		      <div class="media-left">
+	          <p class="image is-64x64">
+		          <%= image_tag "AnonymousCommenter2.png"%>
+		        </p>
+			    </div>
+			    <div class="media-content">
+						<p><strong><%= comment.commenter %></strong></p>
+						<p><%= comment.body %></p>
+						<small><p><%= link_to 'Remove Comment', [comment.article, comment], method: :delete, data: { confirm: 'Are You sure?'} %></p></small>
+					</div>
+				</article>
+			<% end %>
+    </div>
+  </div>
+</div>
