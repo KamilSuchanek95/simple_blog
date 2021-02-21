@@ -1,6 +1,16 @@
-<h1>Editing Article</h1>
-
-<%= render 'form', article: @article %>
-
-<%= link_to 'Show', @article %> |
-<%= link_to 'Back', articles_path %>
+<div class="section has-background-dark has-text-white" style="border-radius: 100px;">
+  <section class="hero is-link has-background-dark has-text-white" style="border-radius: inherit">
+	  <div class="hero-head">
+	  	<center>
+	  		<p class="title">
+			 		Edycja
+				</p>
+			</center>	
+	  </div>
+	  <div class="hero-body">
+	  	<hr>
+				<%= render 'form', article: @article %>
+				<%= link_to 'Show', @article %> |
+				<%= link_to 'Back', articles_path %>path %>
+	  </div>
+	</section>

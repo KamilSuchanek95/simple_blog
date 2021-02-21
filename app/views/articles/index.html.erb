@@ -1,29 +1,33 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Articles</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Text</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <div class="columns">
+    
+    <% @arrange_counter = 0 %> <!-- Distribute max 4 tiles for a row -->
+      
+      <% @articles.each do |article| %>
+        
+        <% if @arrange_counter > 2 %>
+          
+          <% @arrange_counter = 0 %>
+          <!-- close the tag and open the next row -->
+          </div><div class="columns">
 
-  <tbody>
-    <% @articles.each do |article| %>
-      <tr>
-        <td><%= article.title %></td>
-        <td><%= article.text %></td>
-        <td><%= link_to 'Show', article %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Remove', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <% end %>
 
-<br>
+          <div class="column" style="background: rgba(0, 0, 0, 0.85); border-radius: 50px; padding:25px">
+            <a class="has-text-white title is-4" href="<%= article_path(article) %>"><%= article.title %></a>
+            <div style="background: linear-gradient(to top, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));">
+              <a class="subtitle is-6"><%= article.text[0..100] %>...</a>
+            </div>
+            <p>_________________</p>
+            <p>
+              <%= link_to 'Show', article, :style=> 'color:#FFFFFF;' %> |
+              <%= link_to 'Edit', edit_article_path(article), :style=> 'color:#FFFFFF;' %> |
+              <%= link_to 'Remove', article, method: :delete, data: { confirm: 'Are you sure?' }, :style=> 'color:#FFFFFF;' %>
+            </p>
+          </div>
 
-<%= link_to 'New Article', new_article_path %>
+        <% @arrange_counter += 1 %>
+      <% end %>
+  </div>
