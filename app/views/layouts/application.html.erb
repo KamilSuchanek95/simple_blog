@@ -8,7 +8,12 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_pack_tag 'application' %>
   </head>
-
+  <div class="has-background-black" style="border-radius: 100px;">
+    <center>
+      <p id="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </center>
+  </div>
   <body style="opacity: 0.95; background: rgba(0, 0, 0, 0);">
     <div style="background: rgba(0, 0, 0, 0.13); border-radius: 100px;">
       <center><%= image_tag "PISADŁO-removebg.png", align: "middle"%></center>
