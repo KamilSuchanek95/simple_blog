@@ -37,16 +37,18 @@
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="buttons">
-              <a class="button is-dark">Utwórz konto</a>
+              <a class="button is-dark" href="<%= new_user_registration_path %>">Utwórz konto</a>
               <hr class="navbar-divider">
-              <a class="button is-dark">Zaloguj</a>
+              <a class="button is-dark" href="<%= new_user_session_path %>">Zaloguj</a>
             </div>
           </div>
         </div>
       </div>
     </nav>
     <hr>
-    <%= yield %>
+    <div class="box has-text-white" style="background: rgba(0, 0, 0, 0.33); border-radius: 100px; padding:55px">
+      <%= yield %>
+    </div>
   </body>
   <footer>
     <center>stópka</center>
