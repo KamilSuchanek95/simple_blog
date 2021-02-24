@@ -39,9 +39,15 @@
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="buttons">
-              <a class="button is-dark" href="<%= new_user_registration_path %>">Utwórz konto</a>
-              <hr class="navbar-divider">
-              <a class="button is-dark" href="<%= new_user_session_path %>">Zaloguj</a>
+              <% if user_signed_in? %>
+                <%= button_to "Wyloguj", destroy_user_session_path, method: :delete, class: "button is-dark" %>
+                <hr class="navbar-divider">
+                <%= button_to "Konto", users_show_path, class: "button is-dark" %>
+              <% else %>
+                <a class="button is-dark" href="<%= new_user_registration_path %>">Utwórz konto</a>
+                <hr class="navbar-divider">
+                <a class="button is-dark" href="<%= new_user_session_path %>">Zaloguj</a>
+              <% end %>
             </div>
           </div>
         </div>
