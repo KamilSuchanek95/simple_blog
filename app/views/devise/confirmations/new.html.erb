@@ -1,5 +1,5 @@
-<div class="box has-text-white" style="background: rgba(0, 0, 0, 0.85); border-radius: 50px; padding:25px">
-  <center>
+<center>	
+	<div class="box has-text-white" style="background: rgba(0, 0, 0, 0.85); border-radius: 50px; padding:25px;max-width:650px;">
     <p class="title has-text-white">Resend confirmation instructions</p>
 
 		<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
@@ -16,5 +16,5 @@
 		<% end %><br />
 
 		<%= render "devise/shared/links" %>
-	</center>
-</div>
+	</div>
+</center>

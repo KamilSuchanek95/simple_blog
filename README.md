@@ -1,6 +1,7 @@
 # README
+Na tę chwilę działają podstawowe funkcje bloga + ładny wygląd, wydaje mi się trochę wbrew temu sugoerowanemu przez Bulmę css, ale tak mi sie podoba. Podstawowy system użytkowników również jest sprawny, wraz z potwierdzeniem rejestracji na pocztę.
 
-![preview](/app/assets/images/preview.png)
+![preview](/app/assets/images/preview2.png)
 
 
 
