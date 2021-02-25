@@ -1,16 +1,20 @@
-<h2>Resend unlock instructions</h2>
+<div class="box has-text-white" style="background: rgba(0, 0, 0, 0.85); border-radius: 50px; padding:25px">
+  <center>
+    <p class="title has-text-white">Resend unlock instructions</p>
 
-<%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+		<%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
+		  <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+		  <div class="field">
+		    <%= f.label :email, class:"label has-text-white" %><br />
+		    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"input", type:"email" %>
+		  </div><br />
 
-  <div class="actions">
-    <%= f.submit "Resend unlock instructions" %>
-  </div>
-<% end %>
+		  <div class="actions">
+		    <%= f.submit "Resend unlock instructions", class:"button is-warning id-outlined" %>
+		  </div>
+		<% end %><br />
 
-<%= render "devise/shared/links" %>
+		<%= render "devise/shared/links" %>
+	</center>
+</div>
