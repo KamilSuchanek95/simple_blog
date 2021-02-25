@@ -6,9 +6,10 @@ Rails.application.routes.draw do
   resources :articles do
   	resources :comments
   end
+  
   devise_scope :user do 
     get 'users/show' => 'users/registrations#show'
-    post 'users/show' => 'users/registrations#show'
+    post 'users/edit' => 'users/registrations#edit'
   end
 
   Rails.application.routes.draw do
@@ -17,5 +18,4 @@ Rails.application.routes.draw do
       }
     end
 
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

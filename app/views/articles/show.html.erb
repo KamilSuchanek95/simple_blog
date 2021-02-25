@@ -1,26 +1,20 @@
-<div class="section has-background-dark has-text-white" style="border-radius: 100px;">
-
-  <section class="hero is-link has-background-dark has-text-white" style="border-radius: inherit">
-	  <div class="hero-head">
-	  	<p class="title" style="padding:55px;"">
+<div class="section" style="background: rgba(0, 0, 0, 0.85); border-radius: 50px; padding:25px">
+	 <div class="hero-head">
+  	<p class="title" style="padding:55px;color:white">
 			  <%= @article.title %>
-			</p>
-			<p class='subtitle' style="padding:55px;text-align: justify">
-  			<%= @article.text %>
-			</p>
-	  </div>
-	  <div class="hero-body">
-	  	<hr>
-	  	<h1><center>
-	  		Komentarze (<%= @article.comments.count %>)
-	  	</center></h1>
-	  	<hr>
-	    <%= render 'comments/comments' %>
-	    <hr>
-	  	<%= render 'comments/form' %>
-	  </div>
-	</section>
-
+		</p>
+		<p class='subtitle' style="padding:55px;text-align: justify;color:white">
+  		<%= @article.text %>
+		</p>
+  </div>
+  <div class="hero-body">
+	  <hr>
+	  <h1><center>Komentarze (<%= @article.comments.count %>)</center></h1>
+	  <hr>
+	  <%= render 'comments/comments' %>
+	  <hr>
+	  <%= render 'comments/form' %>
+	</div>
 	<%= link_to 'Edit', edit_article_path(@article) %> |
 	<%= link_to 'Back', articles_path %>
-</div>
+</section>

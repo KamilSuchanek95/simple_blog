@@ -6,7 +6,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def show
     authenticate_scope!
-    binding.pry
+    # binding.pry
+
   end
 
   # GET /resource/sign_up

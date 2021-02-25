@@ -1,0 +1,51 @@
+<div class="box has-text-white" style="background: rgba(0, 0, 0, 0.85); border-radius: 50px; padding:25px">
+  <center>
+    <p class="title has-text-white">Edit <%= resource_name.to_s.humanize %></p>
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="field">
+        <%= f.label :username, class:"label has-text-white" %><br />
+        <%= f.text_field :username, autofocus: true, autocomplete: "username", class:"input",type:"text" %>
+      </div><br />
+
+      <div class="field">
+        <%= f.label :email, class:"label has-text-white" %><br />
+        <%= f.email_field :email, autocomplete: "email", class:"input", type:"email" %>
+      </div><br />
+
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <% end %><br />
+
+      <div class="field">
+        <%= f.label :password, class:"label has-text-white" %> <i>(leave blank if you don't want to change it)</i><br />
+        <%= f.password_field :password, autocomplete: "new-password",class:"input",type:"password" %>
+
+        <% if @minimum_password_length %>
+          <br />
+          <em><%= @minimum_password_length %> characters minimum</em>
+        <% end %>
+      </div><br />
+
+      <div class="field">
+        <%= f.label :password_confirmation, class:"label has-text-white" %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password",class:"input",type:"password" %>
+      </div><br />
+
+      <div class="field">
+        <%= f.label :current_password, class:"label has-text-white" %> <i>(we need your current password to confirm your changes)</i><br />
+        <%= f.password_field :current_password, autocomplete: "current-password",class:"input",type:"password" %>
+      </div><br />
+
+      <div class="actions">
+        <%= f.submit "Update", class:"button is-link is-outlined" %>
+      </div>
+    <% end %><br />
+<!--     <p>Unhappy? <%= button_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class:"button is-danger is-outlined" %></p>
+ -->
+    <br />
+    <%= link_to "Back", :back %>
+  </center>
+</div>

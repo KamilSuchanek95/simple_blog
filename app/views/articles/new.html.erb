@@ -1,16 +1,17 @@
-<div class="section has-background-dark has-text-white" style="border-radius: 100px;">
-  <section class="hero is-link has-background-dark has-text-white" style="border-radius: inherit">
-	  <div class="hero-head">
-	  	<center>
-	  		<p class="title">
+<!-- <div class="box" style="background: rgba(0, 0, 0, 0.85); border-radius: 50px; padding:25px">
+ -->
+<section class="hero" style="border-radius: inherit; padding:inherit;background:inherit;">
+	 <div class="hero-head">
+	  <center>
+	  	<p class="title" style="color:white">
 			 		Nowy artykuł
-				</p>
-			</center>	
-	  </div>
-	  <div class="hero-body">
-	  	<hr>
-				<%= render 'form', article: @article %>
-				<%= link_to 'Back', articles_path %>
-	  </div>
-	</section>
-</div>
+			</p>
+		</center>	
+  </div>
+	 <div class="hero-body">
+	  <hr>
+			<%= render 'form', article: @article %>
+			<%= link_to 'Back', articles_path %>
+	 </div>
+</section>
+<!-- </div> -->
