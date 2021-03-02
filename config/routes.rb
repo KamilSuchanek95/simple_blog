@@ -16,6 +16,10 @@ Rails.application.routes.draw do
       devise_for :users, controllers: {
         sessions: 'users/sessions'
       }
-    end
+  end
+
+  resources :users do
+    resources :articles
+  end
 
 end
