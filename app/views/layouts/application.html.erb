@@ -10,23 +10,8 @@
   </head>
 
   <body style="opacity: 0.95; background: rgba(0, 0, 0, 0);">
-<<<<<<< HEAD
     <br><br><br>
     <nav class="navbar is-fixed-top is-dark is-spaced" role="navigation" aria-label="main navigation">
-=======
-    <div style="background: rgba(0, 0, 0, 0.13); border-radius: 100px;">
-      <center><%= image_tag "PISADŁO-removebg.png", align: "middle"%></center>
-    </div>
-    <hr>
-      <div class="has-background-white" style="border-radius: 100px;border-style: double;">
-        <center>
-          <p class="notice"><%= notice %></p>
-          <p class="alert"><%= alert %></p>
-        </center>
-      </div>
-    <hr>
-    <nav class="navbar is-fixed-top is-dark is-spaced" style="border-radius: 100px;" role="navigation" aria-label="main navigation">
->>>>>>> devise
       <div class="navbar-brand">
          <a class="navbar-item">
           <%= image_tag "PISADŁO_without_text-removebg.png", width:"112", height:"28" %></a>
@@ -39,18 +24,11 @@
           <hr class="navbar-dividier">
           <a class="navbar-item" href="<%= articles_path %>">Artykuły</a>
           <% if user_signed_in? %>
-<<<<<<< HEAD
             <hr class="navbar-dividier">
             <a class="navbar-item" href="<%= new_article_path %>">Napisz artykuł</a>
           <% end %>
 
           <a class="navbar-burger is-right has-background-black" data-target="navbarBasicExample">
-=======
-          	<hr class="navbar-dividier">
-          	<a class="navbar-item" href="<%= new_article_path %>">Napisz artykuł</a>
-          <% end %>
-          <a role="button" class="navbar-burger is-right" data-target="navbarBasicExample">
->>>>>>> devise
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span></a>
