@@ -1,5 +1,6 @@
 <div class="section" style="background: rgba(0, 0, 0, 0.85); border-radius: 50px; padding:25px">
 	 <div class="hero-head">
+	 	<i>Autor: <%= @author_name %> | Opublikowano: <%= @article.created_at.strftime("%Y-%m-%d %H:%M") %></i> 
   	<p class="title" style="padding:55px;color:white">
 			  <%= @article.title %>
 		</p>

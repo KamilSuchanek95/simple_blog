@@ -21,15 +21,17 @@
         </center>
       </div>
     <hr>
-    <nav class="navbar is-dark is-spaced" style="border-radius: 100px;" role="navigation" aria-label="main navigation">
+    <nav class="navbar is-fixed-top is-dark is-spaced" style="border-radius: 100px;" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
          <a class="navbar-item" href="<%= about_index_path %>">
           <%= image_tag "PISADŁO_without_text-removebg.png", width:"112", height:"28" %></a>
           <a class="navbar-item" href="<%= about_index_path %>">O</a>
           <hr class="navbar-dividier">
           <a class="navbar-item" href="<%= articles_path %>">Artykuły</a>
-          <hr class="navbar-dividier">
-          <a class="navbar-item" href="<%= new_article_path %>">Napisz artykuł</a>
+          <% if user_signed_in? %>
+          	<hr class="navbar-dividier">
+          	<a class="navbar-item" href="<%= new_article_path %>">Napisz artykuł</a>
+          <% end %>
           <a role="button" class="navbar-burger is-right" data-target="navbarBasicExample">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>

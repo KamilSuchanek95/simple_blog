@@ -1,11 +1,11 @@
-<%= form_with(model: article, local: true) do |form| %>
+<%= form_with(model: [ current_user, current_user.articles.build ] , local: true) do |form| %>
   
-  <% if article.errors.any? %>
+  <% if current_user.articles.build.errors.any? %>
     <div id="error_explanation", class="has-text-black">
-      <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
+      <h2><%= pluralize(current_user.articles.build.errors.count, "error") %> prohibited this article from being saved:</h2>
 
       <ul>
-        <% article.errors.full_messages.each do |message| %>
+        <% current_user.articles.build.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
