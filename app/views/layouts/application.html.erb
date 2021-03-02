@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style="background: url(<%= asset_path 'my_pattern.png' %>);background-attachment: fixed;">
+<html class="has-navbar-fixed-top" style="background: url(<%= asset_path 'my_pattern.png' %>);background-attachment: fixed;">
   <head>
     <title>Pisadło - otwarty blog</title>
     <%= csrf_meta_tags %>
@@ -10,6 +10,47 @@
   </head>
 
   <body style="opacity: 0.95; background: rgba(0, 0, 0, 0);">
+    <br><br><br>
+    <nav class="navbar is-fixed-top is-dark is-spaced" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+         <a class="navbar-item">
+          <%= image_tag "PISADŁO_without_text-removebg.png", width:"112", height:"28" %></a>
+          <!-- a trick -->
+          <a class="navbar-item"></a>
+          <a class="navbar-item"></a>
+          <a class="navbar-item"></a>
+
+          <a class="navbar-item" href="<%= about_index_path %>">O</a>
+          <hr class="navbar-dividier">
+          <a class="navbar-item" href="<%= articles_path %>">Artykuły</a>
+          <% if user_signed_in? %>
+            <hr class="navbar-dividier">
+            <a class="navbar-item" href="<%= new_article_path %>">Napisz artykuł</a>
+          <% end %>
+
+          <a class="navbar-burger is-right has-background-black" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span></a>
+      </div>
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <% if user_signed_in? %>
+                <%= button_to "Wyloguj", destroy_user_session_path, method: :delete, class: "button is-black" %>
+                <hr class="navbar-divider">
+                <%= button_to "Konto", users_show_path, class: "button is-black", method: :get %>
+              <% else %>
+                <a class="button is-black" href="<%= new_user_registration_path %>">Utwórz konto</a>
+                <hr class="navbar-divider">
+                <a class="button is-black" href="<%= new_user_session_path %>">Zaloguj</a>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
     <div style="background: rgba(0, 0, 0, 0.13); border-radius: 100px;">
       <center><%= image_tag "PISADŁO-removebg.png", align: "middle"%></center>
     </div>
@@ -20,39 +61,6 @@
           <p class="alert"><%= alert %></p>
         </center>
       </div>
-    <hr>
-    <nav class="navbar is-dark is-spaced" style="border-radius: 100px;" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-         <a class="navbar-item" href="<%= about_index_path %>">
-          <%= image_tag "PISADŁO_without_text-removebg.png", width:"112", height:"28" %></a>
-          <a class="navbar-item" href="<%= about_index_path %>">O</a>
-          <hr class="navbar-dividier">
-          <a class="navbar-item" href="<%= articles_path %>">Artykuły</a>
-          <hr class="navbar-dividier">
-          <a class="navbar-item" href="<%= new_article_path %>">Napisz artykuł</a>
-          <a role="button" class="navbar-burger is-right" data-target="navbarBasicExample">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span></a>
-      </div>
-      <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-end">
-          <div class="navbar-item">
-            <div class="buttons">
-              <% if user_signed_in? %>
-                <%= button_to "Wyloguj", destroy_user_session_path, method: :delete, class: "button is-dark" %>
-                <hr class="navbar-divider">
-                <%= button_to "Konto", users_show_path, class: "button is-dark", method: :get %>
-              <% else %>
-                <a class="button is-dark" href="<%= new_user_registration_path %>">Utwórz konto</a>
-                <hr class="navbar-divider">
-                <a class="button is-dark" href="<%= new_user_session_path %>">Zaloguj</a>
-              <% end %>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
     <hr>
     <div class="box has-text-white" style="background: rgba(0, 0, 0, 0.33); border-radius: 100px; padding:55px">
       <%= yield %>
